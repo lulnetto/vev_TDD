@@ -11,4 +11,7 @@ class funcionario:
             if self.salario_base >= 3000:
                 return self.salario_base*0.8
             return self.salario_base*0.9
-        
+        if self.cargo == "DBA":
+            if self.salario_base >= 2000:
+                return self.salario_base*0.75
+            return self.salario_base*0.85
