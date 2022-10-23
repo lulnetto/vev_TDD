@@ -19,3 +19,14 @@ def test_cargo_dba_15():
     func = funcionario('netto','abc',1000,'DBA')
     
     assert 850 == func.calcSalario()
+
+def test_cargo_testador_25():
+    func = funcionario('netto','abc',3000,'TESTADOR')
+
+    assert 2250 == func.calcSalario()
+
+def test_cargo_testador_15():
+    func = funcionario('netto','abc',1000,'TESTADOR')
+    
+    assert 850 == func.calcSalario()
+
