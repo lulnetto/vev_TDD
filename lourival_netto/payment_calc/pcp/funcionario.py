@@ -7,6 +7,8 @@ class funcionario:
         self.cargo = cargo
     
     def calcSalario(self):
-        if self.salario_base >= 3000:
-            return self.salario_base*0.8
-        return self.salario_base*0.9
+        if self.cargo == 'DESENVOLVEDOR':
+            if self.salario_base >= 3000:
+                return self.salario_base*0.8
+            return self.salario_base*0.9
+        
