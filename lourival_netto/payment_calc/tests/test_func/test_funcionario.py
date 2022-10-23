@@ -1,4 +1,4 @@
-from pcp import funcionario
+from pcp.funcionario import funcionario
 
 def test_cargo_desenvolvedor_20():
     func = funcionario('netto','abc',3000,'DESENVOLVEDOR')
