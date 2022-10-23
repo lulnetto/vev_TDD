@@ -20,12 +20,13 @@ class FiltroDeFaturasServiceTest {
         assertEquals("Paraíba", cliente.getEstado());
     }
 
+    @Test
     public void create_new_invoice(){
         //Criar uma nova fatura
 
         Fatura fatura = new Fatura("CODTEST", 100, "20/08/2022", "Berg");
 
-        assertEquals("CODETEST", fatura.getCodigo());
+        assertEquals("CODTEST", fatura.getCodigo());
         assertEquals(100, fatura.getValor());
         assertEquals("20/08/2022", fatura.getData());
         assertEquals("Berg", fatura.getCliente());
