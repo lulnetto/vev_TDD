@@ -30,3 +30,15 @@ def test_cargo_testador_15():
     
     assert 850 == func.calcSalario()
 
+
+def test_cargo_gerente_30():
+    func = funcionario('netto','abc',10000,'GERENTE')
+
+    assert 7000 == func.calcSalario()
+
+def test_cargo_gerente_20():
+    func = funcionario('netto','abc',1000,'GERENTE')
+    
+    assert 800 == func.calcSalario()
+
+
