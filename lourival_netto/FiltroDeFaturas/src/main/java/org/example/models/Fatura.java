@@ -1,19 +1,23 @@
 package org.example.models;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 public class Fatura {
 
     private String codigo;
     private int valor;
-    private String data;
+    private Date data;
     private String cliente;
 
 
-    public Fatura(String codigo, int valor, String data, String cliente) {
+    public Fatura(String codigo, int valor, String date, String cliente) throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         this.codigo = codigo;
         this.valor = valor;
-        this.data = data;
+        this.data = simpleDateFormat.parse(date);
         this.cliente = cliente;
     }
 
@@ -25,7 +29,7 @@ public class Fatura {
         return this.valor;
     }
 
-    public String getData(){
+    public Date getData(){
         return this.data;
     }
 
