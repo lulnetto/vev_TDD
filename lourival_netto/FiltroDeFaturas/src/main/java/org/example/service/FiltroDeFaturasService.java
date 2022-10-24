@@ -10,7 +10,11 @@ public class FiltroDeFaturasService {
 
     public List<Fatura> filter(Fatura[] faturas){
         List<Fatura> filtered = new ArrayList<>(Arrays.asList(faturas));
-
+        for(Fatura fatura: faturas){
+            if (fatura.getValor() < 2000){
+                filtered.remove(fatura);
+            }
+        }
         return filtered;
     }
 }

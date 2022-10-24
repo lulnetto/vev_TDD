@@ -35,6 +35,17 @@ class FiltroDeFaturasServiceTest {
     }
 
     @Test
+    public void filter_is_bellow_2k(){
+        //Pecorrer umas lista de faturas e verifica se o valor está abaixo de 2k
+
+        FiltroDeFaturasService filtroDeFaturasService = new FiltroDeFaturasService();
+        Fatura[] faturas = {new Fatura("#123", 1000, "10/10/2022", "Berg")};
+
+        assertEquals(0, filtroDeFaturasService.filter(faturas).size());
+
+    }
+
+    @Test
     public void filter_a_list_of_invoices(){
         //Criar um filtro
         FiltroDeFaturasService filtroDeFaturasService = new FiltroDeFaturasService();
