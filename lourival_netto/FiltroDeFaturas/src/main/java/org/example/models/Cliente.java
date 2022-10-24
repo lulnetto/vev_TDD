@@ -20,8 +20,8 @@ public class Cliente {
         this.estado = estado;
     }
 
-    public UUID getId(){
-        return this.id;
+    public String getId(){
+        return this.id.toString();
     }
 
     public String getNome(){
