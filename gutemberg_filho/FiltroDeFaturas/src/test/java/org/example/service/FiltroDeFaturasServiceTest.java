@@ -97,6 +97,27 @@ class FiltroDeFaturasServiceTest {
 
     }
 
+    @Test
+    public void filter_is_above_4k_and_south_states() throws ParseException {
+        //Criar um novo cliente
+        ClienteController clienteController = new ClienteController();
+        String clienteID1 = clienteController.insertClient(new Cliente("Berg", "22/08/2022", "Paraíba"));
+        String clienteID2 = clienteController.insertClient(new Cliente("Filho", "23/02/2022", "Paraná"));
+
+        //Criar um filtro
+        FiltroDeFaturasService filtroDeFaturasService = new FiltroDeFaturasService(clienteController);
+
+        //Pecorrer umas lista de faturas e verifica se o valor está acima de 4k.
+        // Verifica se o estado do cliente fica no sul do país.
+        //Lista de faturas que passarão pelo filtro.
+        Fatura[] faturas = {new Fatura("#123", 2800, "10/09/2022", clienteID1),
+                new Fatura("#234", 4600, "10/06/2022", clienteID2)};
+
+
+        assertEquals(1, filtroDeFaturasService.filter(faturas).size());
+
+    }
+
 
 
 
