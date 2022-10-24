@@ -60,11 +60,11 @@ class FiltroDeFaturasServiceTest {
         //Pecorrer umas lista de faturas e verifica se o valor está entre de 2k e 2k e meio.
         // Verifica se a fatura tem 1 mês ou menos.
         //Lista de faturas que passarão pelo filtro.
-        Fatura[] faturas = {new Fatura("#123", 2200, "10/10/2022", "Berg"),
+        Fatura[] faturas = {new Fatura("#123", 2200, "10/09/2022", "Berg"),
                 new Fatura("#234", 2000, "10/10/2022", "Berg")};
 
 
-        assertEquals(0, filtroDeFaturasService.filter(faturas).size());
+        assertEquals(1, filtroDeFaturasService.filter(faturas).size());
 
     }
 
