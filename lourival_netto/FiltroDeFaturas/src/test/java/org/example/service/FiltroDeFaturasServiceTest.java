@@ -4,6 +4,8 @@ import org.example.models.Cliente;
 import org.example.models.Fatura;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -32,6 +34,20 @@ class FiltroDeFaturasServiceTest {
         assertEquals("Berg", fatura.getCliente());
     }
 
+    @Test
+    public void filter_a_list_of_invoices(){
+        //Criar um filtro
+        FiltroDeFaturasService filtroDeFaturasService = new FiltroDeFaturasService();
+
+        //Lista de faturas que passarão pelo filtro
+        Fatura[] faturas = {new Fatura("#123", 2000, "10/10/2022", "Berg")};
+
+        //Executar funcionalidade de filtrar
+        filtroDeFaturasService.filter(faturas);
+
+        assertEquals(0, filtroDeFaturasService.filter(faturas).size());
+
+    }
 
 
 }
