@@ -20,6 +20,8 @@ public class FiltroDeFaturasService {
             }else if(fatura.getValor() >= 2000 && fatura.getValor() <= 2500 && calcTime(fatura.getData()) <= 30){
                 filtered.remove(fatura);
             }else if(fatura.getValor() > 2500 && fatura.getValor() <= 3000){
+                filtered.remove(fatura);
+            } else if(fatura.getValor() > 4000) {
 
             }
         }
