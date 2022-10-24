@@ -21,7 +21,7 @@ public class FiltroDeFaturasService {
 
     public List<Fatura> filter(Fatura[] faturas){
         List<Fatura> filtered = new ArrayList<>(Arrays.asList(faturas));
-
+        String[] estados = {"Rio Grande do Sul", "Paraná", "Santa Catarina"};
         for(Fatura fatura: faturas){
             Cliente cliente = this.clienteController.findClient(fatura.getCliente());
             if (fatura.getValor() < 2000){
@@ -30,7 +30,7 @@ public class FiltroDeFaturasService {
                 filtered.remove(fatura);
             }else if(fatura.getValor() > 2500 && fatura.getValor() <= 3000 && calcTime(cliente.getData()) <= 60){
                 filtered.remove(fatura);
-            } else if(fatura.getValor() > 4000) {
+            } else if(fatura.getValor() > 4000 && Arrays.asList(estados).contains(cliente.getEstado())) {
                 filtered.remove(fatura);
             }
         }
